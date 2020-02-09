@@ -1,11 +1,11 @@
 h1{
 	color: rgba(100,150,200,.9);
-	border:  5px dotted #434e52 ;
+	/*border:  5px dotted #434e52 ;*/
 }
 
 h2{
 	color: rgba(100,150,200,.9);
-}
+} 
 
 h5 {
 	color: rgba(100,150,200,.9);
@@ -19,4 +19,16 @@ p {
 body{
 	padding: 5em;
 	background: #ecce6d;
+}
+
+
+
+li{
+
+	border : 3px dotted #434e52 ;
+
+}
+
+.completed{
+	text-decoration: line-through;
 }
