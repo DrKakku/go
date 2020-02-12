@@ -28,6 +28,12 @@ p {
 	right: 5%;
 	filter: drop-shadow(2px);
 }
+#bottom_left{
+	bottom: 5%;
+	left: 4%;
+	position: absolute;
+	filter: blur(-2px);
+}
 
 body{
 	padding: 5em;

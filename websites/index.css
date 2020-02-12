@@ -1,6 +1,6 @@
 h1{
 	color: rgba(100,150,200,.9);
-	border-color: #434e52 5px dotted ;
+	border:  5px dotted #434e52 ;
 }
 
 h2{
@@ -13,6 +13,26 @@ h5 {
 
 p {
 	color: #5b8c85;
+}
+
+#left{
+	position: absolute;
+	top: 3%;
+	left: 5%;
+	filter: drop-shadow(2px);
+}
+
+#right{
+	top: 3%;
+	position: absolute;
+	right: 5%;
+	filter: drop-shadow(2px);
+}
+#bottom_left{
+	bottom: 5%;
+	left: 4%;
+	position: absolute;
+	filter: blur(-2px);
 }
 
 
