@@ -3,7 +3,7 @@ body{
 	background-size: auto;
 }
 form{
-	background: filter :blur(8px); 
+	background: rgb(196, 179, 161); 
 	position: absolute;
 	top: 30%;
 	left: 40%;

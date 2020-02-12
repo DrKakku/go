@@ -35,6 +35,18 @@ p {
 	filter: blur(-2px);
 }
 
+li:hover{
+	text-decoration:underline;
+	color: #5b8c85;
+	background: lightgrey;
+}
+div:hover{
+	text-decoration:underline;
+	color: #5b8c85;
+	background: lightgrey;
+}
+
+
 body{
 	padding: 5em;
 	background: #ecce6d;

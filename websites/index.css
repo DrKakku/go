@@ -35,6 +35,11 @@ p {
 	filter: blur(-2px);
 }
 
+li:hover{
+	text-decoration:underline;
+	color: #5b8c85;
+	background: rgba(100,150,200,.9);
+}
 
 body{
 	padding: 5em;

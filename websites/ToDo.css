@@ -22,8 +22,10 @@ body{
 }
 
 
-
-
-.completed{
+li:hover{
+	text-decoration: underline; ;
+}
+.compleated{
 	text-decoration: line-through;
 }
+
