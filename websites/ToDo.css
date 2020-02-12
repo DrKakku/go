@@ -23,11 +23,6 @@ body{
 
 
 
-li{
-
-	border : 3px dotted #434e52 ;
-
-}
 
 .completed{
 	text-decoration: line-through;
