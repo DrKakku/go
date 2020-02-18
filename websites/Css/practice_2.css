@@ -1,7 +1,9 @@
-p {
-    font-family: Arial, Helvetica, sans-serif;
+table {
+    margin: 15%;
+    background-color: cadetblue;
+    border: 2px;
 }
 
-h1 {
-    font-size: 40px;
+td {
+    padding: 75px;
 }
