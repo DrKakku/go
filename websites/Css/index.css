@@ -23,6 +23,30 @@ p {
     height: auto;
 }
 
+.navHead+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: peru;
+}
+
+.navHead+li {
+    float: left;
+}
+
+.navHead+a {
+    display: block;
+    color: wheat;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navHead+li a:hover {
+    backdrop-filter: blurr;
+}
+
 #left {
     position: absolute;
     top: 3%;
@@ -44,7 +68,7 @@ p {
     filter: blur(-2px);
 }
 
-li:hover {
+ul:hover {
     text-decoration: underline;
     color: #5b8c85;
     background: rgba(100, 150, 200, .9);
