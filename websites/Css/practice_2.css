@@ -1,9 +1,19 @@
 table {
     margin: 15%;
-    background-color: cadetblue;
     border: 2px;
 }
 
 td {
-    padding: 75px;
+    width: 100px;
+    height: 100px;
+}
+
+.vert {
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+}
+
+.hor {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
 }
