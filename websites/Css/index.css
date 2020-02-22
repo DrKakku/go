@@ -16,6 +16,13 @@ p {
     color: #5b8c85;
 }
 
+#my_image {
+    width: 20%;
+    right: 5%;
+    position: absolute;
+    height: auto;
+}
+
 #left {
     position: absolute;
     top: 3%;
