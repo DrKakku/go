@@ -3,18 +3,18 @@ var scl = 20;
 var food ;
 var speed = 20;
 var score = 0;
-var height = windowHeight;
-var width = windowWidth;
+
+let cnv;
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+	cnv = createCanvas(windowWidth, windowHeight);
+	var height = windowHeight;
+	var width = windowWidth;
 	s = new Snake;
-	
+
+  	
 	frameRate(8);
 	LocateFood();
 
-	// button = createButton('click me');
-  	// button.position(19, 19);
-  	// button.mousePressed(s.dir(0,speed));
 }
 
 function draw() {
@@ -22,7 +22,7 @@ function draw() {
 	background(30,30,50); 
 	textSize(32);
 	fill(100,120,153);
-	text("The current score is "+score,windowWidth/2-111,130);
+	text("The current score is "+score,windowWidth/2-(windowWidth/9+12),130);
 	if(s.death())
 	{
 		alert("You died");
@@ -32,7 +32,7 @@ function draw() {
 	s.show();
 	s.bounds();
 	KeyPressed();
-
+	
 	if(s.eat(food))
 	{	
 		score++;
@@ -49,7 +49,7 @@ function draw() {
 function screenChange()
 {
 	if(height != windowHeight || width != windowWidth){
-		createCanvas(windowWidth, windowHeight);
+		cnv = createCanvas(windowWidth, windowHeight);
 		var height = windowHeight;
 		var width = windowWidth;
 	}
@@ -64,12 +64,16 @@ function LocateFood()
 	food.mult(20);	
 }
 
+
+
 function KeyPressed() {
+	
 	if(keyCode == UP_ARROW)
 	{
 		s.dir(0,-speed);
+		
 	}
-	else if(keyCode == DOWN_ARROW)
+	else if(keyCode == DOWN_ARROW )
 	{
 		s.dir(0,speed);
 	}	
