@@ -50,8 +50,9 @@ function screenChange()
 {
 	if(height != windowHeight || width != windowWidth){
 		cnv = createCanvas(windowWidth, windowHeight);
-		var height = windowHeight;
-		var width = windowWidth;
+		height = windowHeight;
+		width = windowWidth;
+		LocateFood();
 	}
 }
 
