@@ -54,6 +54,13 @@ p {
     filter: drop-shadow(2px);
 }
 
+#center
+{
+    position: absolute;
+    
+    left:40%;
+}
+
 #right {
     top: 3%;
     position: absolute;
