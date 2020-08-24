@@ -1,7 +1,7 @@
 var s ;
 var scl = 20;
 var food ;
-var speed = 10;
+var speed = 20;
 var score = 0;
 var height = windowHeight;
 var width = windowWidth;
@@ -9,7 +9,7 @@ function setup() {
 	createCanvas(windowWidth, windowHeight);
 	s = new Snake;
 	
-	// frameRate(8);
+	frameRate(8);
 	LocateFood();
 
 	// button = createButton('click me');
