@@ -22,7 +22,8 @@ function draw() {
 	background(30,30,50);
 	textSize(32);
 	fill(100,120,153);
-	text("The current score is "+score,windowWidth/2-(windowWidth/9+12),130);
+	textAlign(CENTER,CENTER);
+	text("The current score is "+score,windowWidth/2,130);
 	if(s.death())
 	{
 		alert("You died");
