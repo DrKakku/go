@@ -1,15 +1,15 @@
 h1 {
-    color: rgba(100, 150, 200, .9);
+    color: rgba(232,222,210, .9);
     
     width: 300px;
 }
 
 h2 {
-    color: rgba(100, 150, 200, .9);
+    color: rgba(232,222,210, .9);
 }
 
 h5 {
-    color: rgba(100, 150, 200, .9);
+    color: rgba(232,222,210, .9);
 }
 
 p {
@@ -48,6 +48,7 @@ p {
 }
 
 #left {
+    color: rgba(232,222,210, .9);
     position: absolute;
     top: 3%;
     left: 5%;
@@ -62,6 +63,7 @@ p {
 }
 
 #right {
+    color: rgba(232,222,210, .9);
     top: 3%;
     position: absolute;
     right: 5%;

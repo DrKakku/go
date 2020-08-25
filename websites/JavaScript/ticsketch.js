@@ -4,11 +4,13 @@ let board =
         [' ', '', ''],
         ['', ' ', '']
     ];
-let color = 189;
+let colorl = [163,210,202];
+let color =[232,222,210];
 let player = ["X", "O"];
 let currentPlayer;
 let avalable = [];
 let arrRect = [];
+let score = [0, 0, 0];
 let move = "nothing", play = 0;
 let ind = { 0: [0, 0], 1: [0, 1], 2: [0, 2], 3: [1, 0], 4: [1, 1], 5: [1, 2], 6: [2, 0], 7: [2, 1], 8: [2, 2] };
 let winner = null;
@@ -24,7 +26,7 @@ function setup() {
 }
 
 function draw() {
-    background(30, 30, 50);
+    background(94,170,168);
     screenChange();
     render();
     win();
@@ -33,6 +35,8 @@ function draw() {
 }
 
 function mousePressed() {
+    screenChange();
+    render();
     for (let i = 0; i < 9; i++) {
         let x;
         if (windowWidth / 5 > windowHeight / 5) { x = windowHeight / 5; }
@@ -73,40 +77,67 @@ function equ3(a, b, c) {
 function win() {
     if (play >= 9) {
         alert("It was a Tie \n no one Won (～￣▽￣)～(～￣▽￣)～");
+        score[2]++;
         reset();
     }
     for (let i = 0; i < 3; i++) {
         if (equ3(board[0][i], board[1][i], board[2][i]) && board[0][i] != "") {
             render();
-            if (currentPlayer == player[0]) currentPlayer = player[1];
-            else currentPlayer = player[0];
+
+
+            if (currentPlayer == player[0]) {
+                currentPlayer = player[1];
+                score[1]++;
+            }
+            else {
+                score[0]++;
+                currentPlayer = player[0];
+            }
             alert(currentPlayer + " Won \n CONGRACHULATIONS \n╰(*°▽°*)╯♪(^∇^*)(≧∀≦)ゞo(*￣︶￣*)o);");
-            move = " and  " + currentPlayer;
+            move = " and won by " + currentPlayer;
             reset();
         }
-        else if (equ3(board[i][0], board[i][1], board[i][2]) && board[i][0] != "" ) {
+        else if (equ3(board[i][0], board[i][1], board[i][2]) && board[i][0] != "") {
             render();
-            if (currentPlayer == player[0]) currentPlayer = player[1];
-            else currentPlayer = player[0];
+            if (currentPlayer == player[0]) {
+                currentPlayer = player[1];
+                score[1]++;
+            }
+            else {
+                score[0]++;
+                currentPlayer = player[0];
+            }
             alert(currentPlayer + " Won \n CONGRACHULATIONS \n╰(*°▽°*)╯♪(^∇^*)(≧∀≦)ゞo(*￣︶￣*)o);");
-            move = " won  " + currentPlayer;
+            move = "and won by " + currentPlayer;
             reset();
         }
-        else if (equ3(board[0][0], board[1][1], board[2][2]) && board[i][0] != "" ) {
+        else if (equ3(board[0][0], board[1][1], board[2][2]) && board[i][0] != "") {
             render();
-            if (currentPlayer == player[0]) currentPlayer = player[1];
-            else currentPlayer = player[0];
+            if (currentPlayer == player[0]) {
+                currentPlayer = player[1];
+                score[1]++;
+            }
+            else {
+                score[0]++;
+                currentPlayer = player[0];
+            }
             alert(currentPlayer + " Won \n CONGRACHULATIONS \n╰(*°▽°*)╯♪(^∇^*)(≧∀≦)ゞo(*￣︶￣*)o);");
-            move = " By " + currentPlayer;
+            move = " and won by " + currentPlayer;
             reset();
 
         }
         else if (equ3(board[0][2], board[1][1], board[2][0]) && board[i][0] != "" && board[0][0] != " ") {
             render();
-            if (currentPlayer == player[0]) currentPlayer = player[1];
-            else currentPlayer = player[0];
+            if (currentPlayer == player[0]) {
+                currentPlayer = player[1];
+                score[1]++;
+            }
+            else {
+                score[0]++;
+                currentPlayer = player[0];
+            }
             alert(currentPlayer + " Won \n CONGRACHULATIONS \n╰(*°▽°*)╯♪(^∇^*)(≧∀≦)ゞo(*￣︶￣*)o);");
-            move = " and won By " + currentPlayer;
+            move = " and won by " + currentPlayer;
             reset();
 
         }
@@ -117,11 +148,11 @@ function win() {
 
 function reset() {
     board =
-    [
-        [' ', '', ' '],
-        [' ', '', ''],
-        ['', ' ', '']
-    ];
+        [
+            [' ', '', ' '],
+            [' ', '', ''],
+            ['', ' ', '']
+        ];
     play = 0;
     currentPlayer = player[0];
     avalable = [];
@@ -156,20 +187,24 @@ function render() {
             rct.push([x, y]);
             strokeWeight(0);
             rectMode(RADIUS);
-            fill(30, 30, 50);
-            (rect(x, y, w / 2, h / 2, 7));
+            fill(5,102,118);
+            (rect(x, y, w / 2, h / 2, 9));
             arrRect.push(rct);
             fill(color);
             strokeWeight(3);
             textSize(40);
             text(spot, x, y);
             strokeWeight(0);
-            fill(50, 120, 150);
+            fill(color);
+
             text("Moved " + move, w * 2, h * 5 - h / 4);
+            fill(color);
+            textSize(18);
+            text("Current Score X = " + score[0] + " O = " + score[1] + " Tie = " + score[2], w / 2, h * 5 - h / 6);
         }
     }
     strokeWeight(5);
-    stroke(color);
+    stroke(colorl);
     line(windowWidth / 5 * 2, windowHeight / 5, windowWidth / 5 * 2, windowHeight - windowHeight / 5);
     line(windowWidth / 5 * 3, windowHeight / 5, windowWidth / 5 * 3, windowHeight - windowHeight / 5);
     line(windowWidth / 5, windowHeight / 5 * 2, windowWidth - windowWidth / 5, windowHeight / 5 * 2);
