@@ -45,7 +45,7 @@ function Snake() {
         fill(200,240,120);
         for(var i = 0; i<this.total ;i++)
         {
-            rect(this.tail[i].x,this.tail[i].y,20,20);
+            rect(this.tail[i].x,this.tail[i].y,10,10);
         }
     }
     

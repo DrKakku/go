@@ -3,7 +3,7 @@ var scl = 20;
 var food ;
 var speed = 20;
 var score = 0;
-
+let hi
 let cnv;
 function setup() {
 	cnv = createCanvas(windowWidth, windowHeight);
@@ -42,7 +42,8 @@ function draw() {
 	}
 	
 	fill(200);
-	rect(food.x,food.y +2,scl + 2,scl);
+	rectMode(RADIUS);
+	rect(food.x,food.y ,scl /2,scl/2);
 	
   
 }
