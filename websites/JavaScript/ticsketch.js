@@ -63,6 +63,7 @@ function mousePressed() {
 }
 function equ3(a, b, c) {
     if (a == b && b == c && a == c) {
+        console.log("true");
         return true;
     }
     else { return false; }
@@ -75,21 +76,24 @@ function win() {
         reset();
     }
     for (let i = 0; i < 3; i++) {
-        if (equ3(board[0][i], board[1][i], board[2][i]) && board[0][i] != "" && board[i][0] != "") {
+        if (equ3(board[0][i], board[1][i], board[2][i]) && board[0][i] != "") {
+            render();
             if (currentPlayer == player[0]) currentPlayer = player[1];
             else currentPlayer = player[0];
             alert(currentPlayer + " Won \n CONGRACHULATIONS \n╰(*°▽°*)╯♪(^∇^*)(≧∀≦)ゞo(*￣︶￣*)o);");
             move = " and  " + currentPlayer;
             reset();
         }
-        else if (equ3(board[i][0], board[i][1], board[i][2]) && board[i][0] != "" && board[i][0] != "") {
+        else if (equ3(board[i][0], board[i][1], board[i][2]) && board[i][0] != "" ) {
+            render();
             if (currentPlayer == player[0]) currentPlayer = player[1];
             else currentPlayer = player[0];
             alert(currentPlayer + " Won \n CONGRACHULATIONS \n╰(*°▽°*)╯♪(^∇^*)(≧∀≦)ゞo(*￣︶￣*)o);");
             move = " won  " + currentPlayer;
             reset();
         }
-        else if (equ3(board[0][0], board[1][1], board[2][2]) && board[i][0] != "" && board[i][0] != "") {
+        else if (equ3(board[0][0], board[1][1], board[2][2]) && board[i][0] != "" ) {
+            render();
             if (currentPlayer == player[0]) currentPlayer = player[1];
             else currentPlayer = player[0];
             alert(currentPlayer + " Won \n CONGRACHULATIONS \n╰(*°▽°*)╯♪(^∇^*)(≧∀≦)ゞo(*￣︶￣*)o);");
@@ -97,7 +101,8 @@ function win() {
             reset();
 
         }
-        else if (equ3(board[0][2], board[1][1], board[2][0]) && board[i][0] != "" && board[i][0] != "") {
+        else if (equ3(board[0][2], board[1][1], board[2][0]) && board[i][0] != "" && board[0][0] != " ") {
+            render();
             if (currentPlayer == player[0]) currentPlayer = player[1];
             else currentPlayer = player[0];
             alert(currentPlayer + " Won \n CONGRACHULATIONS \n╰(*°▽°*)╯♪(^∇^*)(≧∀≦)ゞo(*￣︶￣*)o);");
@@ -112,12 +117,11 @@ function win() {
 
 function reset() {
     board =
-        [
-            ['', '', ''],
-            ['', '', ''],
-            ['', '', '']
-        ];
-
+    [
+        [' ', '', ' '],
+        [' ', '', ''],
+        ['', ' ', '']
+    ];
     play = 0;
     currentPlayer = player[0];
     avalable = [];
