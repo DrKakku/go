@@ -128,7 +128,7 @@ function win() {
         }
 
 
-        else if (equ3(board[0][2], board[1][1], board[2][0]) && board[i][0] != "" && board[0][0] != " ") {
+        else if (equ3(board[0][2], board[1][1], board[2][0]) && board[i][0] != "" ) {
             render();
             if (currentPlayer == player[0]) {
                 currentPlayer = player[1];
@@ -199,17 +199,35 @@ function render() {
             fill(5, 102, 118);
             (rect(x, y, w / 2, h / 2, 9));
             arrRect.push(rct);
+            //Indivusial elements
             fill(color);
             strokeWeight(3);
             textSize(60);
+            //Alignning the symbols
+        // if(j == 0)textAlign(CENTER,BASELINE);
+        //     else if(j == 2 )textAlign(CENTER,CENTER);
+        //     else if( j == 1)    
+
+            textAlign(CENTER,BOTTOM);
             text(spot, x, y);
+            //title
+            textSize(50);
             strokeWeight(0);
             fill(color);
+            textAlign(LEFT,CENTER);
+            text("Tic Tac Toe", w *2-h/2 , h - h /2);
 
-            text("Moved " + move, w * 2, h * 5 - h / 4);
+            //Bottom text
+            textSize(30);
+            strokeWeight(0);
+            fill(color);
+            textAlign(CENTER,CENTER);
+            text("Moved " + move, ((w*5)/3) , h * 5 - (h / 3)*2);
+            //score counter
             fill(color);
             textSize(18);
-            text("Current Score X = " + score[0] + " O = " + score[1] + " Tie = " + score[2], w / 2, h * 5 - h / 6);
+            textAlign(LEFT,BASELINE);
+            text("Current Score | player 1 = " + score[0] +  " | Tie = " + score[2] + " | Player 2 = " + score[1]+"|", w / 9, h * 5 - h / 6);
         }
     }
     strokeWeight(5);
