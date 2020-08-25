@@ -10,7 +10,7 @@ function setup() {
 	var height = windowHeight;
 	var width = windowWidth;
 	s = new Snake;
-
+	 
   	
 	frameRate(8);
 	LocateFood();
@@ -19,7 +19,7 @@ function setup() {
 
 function draw() {
 	screenChange();
-	background(30,30,50); 
+	background(30,30,50);
 	textSize(32);
 	fill(100,120,153);
 	text("The current score is "+score,windowWidth/2-(windowWidth/9+12),130);
@@ -31,6 +31,7 @@ function draw() {
 	s.update();
 	s.show();
 	s.bounds();
+	
 	KeyPressed();
 	
 	if(s.eat(food))
