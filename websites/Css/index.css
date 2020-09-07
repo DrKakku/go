@@ -86,5 +86,14 @@ ul:hover {
 
 body {
     padding: 5em;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
     background:rgb(85, 117, 113);
 }
+
+
+
+main {
+    flex: 1 0 auto;
+  }
